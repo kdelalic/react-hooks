@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 
 const useDarkMode = className => {
-  if (typeof className !== string || !className) {
+  if (typeof className !== "string" || !className) {
     className = "dark"
   }
 
