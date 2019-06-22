@@ -1,0 +1,11 @@
+{
+  "name": "react-hooks",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "Karlo Delalic <karlo.delalic1@gmail.com> (https://karlodelalic.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.8.6"
+  }
+}
