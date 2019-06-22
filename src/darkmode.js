@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react"
 
-const useDarkMode = () => {
+const useDarkMode = className => {
+  if (typeof className !== string || !className) {
+    className = "dark"
+  }
+
   const [isDarkMode, setStoredDarkMode] = useState(() => {
     let storedDarkMode = false;
 
@@ -19,7 +23,6 @@ const useDarkMode = () => {
   }
 
   useEffect(() => {
-    const className = "dark";
     const element = window.document.body;
 
     if (isDarkMode) {
