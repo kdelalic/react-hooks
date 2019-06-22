@@ -1,6 +1,12 @@
 # react-hooks
 
-This repository can be pulled into React projects as a submodule and used. Each file contains one React hook.
+`react-hooks` can be pulled into React projects as a submodule and used. Each file contains one React hook.
+
+To pull `react-hooks` into your project as a submodule into the `src` directory with the name `hooks`:
+
+```bash
+git submodule add git@github.com:kdelalic/react-hooks.git src/hooks
+```
 
 ## darkmode.js
 
