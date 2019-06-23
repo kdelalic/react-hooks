@@ -8,7 +8,7 @@ To pull `react-hooks` into your project as a submodule into the `src` directory 
 git submodule add git@github.com:kdelalic/react-hooks.git src/hooks
 ```
 
-## darkmode.js
+## useDarkMode
 
 This is a hook for keeping dark mode state. State is kept persistent through the localStorage api. When state is true, `className` is added to the body class list and the localStorage value for `isDarkMode` is updated.
 
