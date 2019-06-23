@@ -5,7 +5,7 @@
 To pull `react-hooks` into your project as a submodule into the `src` directory with the name `hooks`:
 
 ```sh
-git submodule add git@github.com:kdelalic/react-hooks.git src/hooks
+git submodule add https://github.com/kdelalic/react-hooks src/hooks
 ```
 
 ## useDarkMode
