@@ -31,7 +31,7 @@ const useDarkMode = className => {
       element.classList.remove(className);
     }
 
-  }, [isDarkMode]);
+  });
 
   return [isDarkMode, setDarkMode];
 }
