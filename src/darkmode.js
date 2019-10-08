@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import useMedia from "./usemedia";
+import useMedia from "./media";
 
 const useDarkMode = className => {
   if (typeof className !== "string" || !className) {
