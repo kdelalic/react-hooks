@@ -7,7 +7,7 @@ const useDarkMode = className => {
   }
 
   // Get dark mode state from local storage
-  const [isDarkMode, setStoredDarkMode] = useState(() => {
+  const [isDarkModeState, setStoredDarkModeState] = useState(() => {
     let storedDarkMode = false;
 
     if (typeof window !== 'undefined') {
@@ -21,10 +21,10 @@ const useDarkMode = className => {
   const prefersDarkMode = usePrefersDarkMode();
 
   // Fallback to OS or browser preference if localstorage is empty
-  const isDarkMode = typeof isDarkMode !== 'undefined' ? isDarkMode : prefersDarkMode;
+  const isDarkMode = typeof isDarkModeState !== 'undefined' ? isDarkModeState : prefersDarkMode;
 
   const setDarkMode = isDark => {
-    setStoredDarkMode(isDark);
+    setStoredDarkModeState(isDark);
     if (typeof window !== 'undefined') {
       window.localStorage.setItem("isDarkMode", JSON.stringify(isDark));
     }
