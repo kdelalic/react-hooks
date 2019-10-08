@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useMedia } from "./usemedia";
+import useMedia from "./usemedia";
 
 const useDarkMode = className => {
   if (typeof className !== "string" || !className) {
@@ -21,7 +21,7 @@ const useDarkMode = className => {
   const prefersDarkMode = usePrefersDarkMode();
 
   // Fallback to OS or browser preference if localstorage is empty
-  const isDarkMode = typeof isDarkModeState !== 'undefined' ? isDarkModeState : prefersDarkMode;
+  const isDarkMode = isDarkModeState !== null ? isDarkModeState : prefersDarkMode;
 
   const setDarkMode = isDark => {
     setStoredDarkModeState(isDark);
@@ -44,6 +44,7 @@ const useDarkMode = className => {
   return [isDarkMode, setDarkMode];
 }
 
+// Check dark mode preference on OS/browser level
 const usePrefersDarkMode = () => {
   return useMedia(['(prefers-color-scheme: dark)'], [true], false);
 }
