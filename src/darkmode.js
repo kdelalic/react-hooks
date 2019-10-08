@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
+import useMedia from "./media";
 
 const useDarkMode = className => {
   if (typeof className !== "string" || !className) {
     className = "dark"
   }
 
-  const [isDarkMode, setStoredDarkMode] = useState(() => {
+  // Get dark mode state from local storage
+  const [isDarkModeState, setStoredDarkModeState] = useState(() => {
     let storedDarkMode = false;
 
     if (typeof window !== 'undefined') {
@@ -15,8 +17,14 @@ const useDarkMode = className => {
     return JSON.parse(storedDarkMode);
   });
 
+  // Check for OS or browser dark mode preference
+  const prefersDarkMode = usePrefersDarkMode();
+
+  // Fallback to OS or browser preference if localstorage is empty
+  const isDarkMode = isDarkModeState !== null ? isDarkModeState : prefersDarkMode;
+
   const setDarkMode = isDark => {
-    setStoredDarkMode(isDark);
+    setStoredDarkModeState(isDark);
     if (typeof window !== 'undefined') {
       window.localStorage.setItem("isDarkMode", JSON.stringify(isDark));
     }
@@ -34,6 +42,11 @@ const useDarkMode = className => {
   });
 
   return [isDarkMode, setDarkMode];
+}
+
+// Check dark mode preference on OS/browser level
+const usePrefersDarkMode = () => {
+  return useMedia(['(prefers-color-scheme: dark)'], [true], false);
 }
 
 export default useDarkMode;
