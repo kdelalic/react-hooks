@@ -6,6 +6,6 @@
   "author": "Karlo Delalic <karlo.delalic1@gmail.com> (https://karlodelalic.me/)",
   "license": "ISC",
   "dependencies": {
-    "react": "16.12.0"
+    "react": "16.14.0"
   }
 }
